@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    background-color: beige;
+}
+
+#new-list-btn-wrapper {
+    height: 10%;
+}
+
+#new-list-btn {
+    height: 50px;
+    width: 100px;
+    margin: 20px;
+    font-size: 1rem;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#new-list-btn:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+#new-list-btn:active {
+    font-size: 1.1rem;
+}
+
+#lists-wrapper {
+    height: 90%;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.list {
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 500px;
+    width: 300px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list-header-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-header {
+    width: 80%;
+    background-color: inherit;
+    border: none;
+    font-size: 2rem;
+}
+
+.list-delete-btn {
+    background-color: inherit;
+    border: none;
+    border-radius: 2px;
+    font-size: 2rem;
+}
+
+.list-delete-btn:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+    color: red;
+    cursor: pointer;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-item-checkbox:hover {
+    cursor: pointer;
+}
+
+.list-item-name {
+    background-color: inherit;
+    border: none;
+    font-size: 1.1rem;
+}
+
+.list-item-description {
+    resize: none;
+    background-color: inherit;
+    border: none;
+    font-size: 0.9rem;
+    margin-left: 20px;
+}
