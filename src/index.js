@@ -4,10 +4,14 @@ import list_item from "./list-item.js";
 import { dom_list, dom_list_item } from './dom.js';
 
 const new_list_btn = document.getElementById("new-list-btn");
-const lists_wrapper = document.getElementById("lists-wrapper");
+new_list_btn.addEventListener("click", () => {
+    createList();
+});
 
 function createList() {
-    lists_wrapper.appendChild(dom_list.cloneNode(true));
+    const lists_wrapper = document.getElementById("lists-wrapper");
+    const list = lists_wrapper.appendChild(dom_list.cloneNode(true));
+    createListItem(list);
 
     const list_delete_btns = document.getElementsByClassName("list-delete-btn");
     for (let list_delete_btn of list_delete_btns) {
@@ -38,9 +42,5 @@ function createListItem(parent) {
         });
     };
 }
-
-new_list_btn.addEventListener("click", () => {
-    createList();
-});
 
 createList();

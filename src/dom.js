@@ -46,4 +46,3 @@ dom_list_item.appendChild(list_item_wrapper);
 dom_list_item.appendChild(list_item_descr);
 
 dom_list.appendChild(list_add_item_btn);
-dom_list.insertBefore(dom_list_item, list_add_item_btn);
