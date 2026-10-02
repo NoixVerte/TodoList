@@ -8,6 +8,10 @@ body {
     background-color: beige;
 }
 
+button {
+    user-select: none;
+}
+
 #new-list-btn-wrapper {
     height: 10%;
 }
@@ -20,6 +24,7 @@ body {
     background-color: white;
     border: 1px solid black;
     border-radius: 5px;
+    user-select: none;
 }
 
 #new-list-btn:hover {
@@ -46,7 +51,7 @@ body {
     border-radius: 5px;
     min-height: 500px;
     height: fit-content;
-    width: 300px;
+    width: 350px;
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -107,10 +112,27 @@ body {
     cursor: pointer;
 }
 
+.list-item-wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+}
+
 .list-item-name {
     background-color: inherit;
     border: none;
     font-size: 1.1rem;
+}
+
+.list-item-priority {
+    background-color: lightgreen;
+    color: darkgreen;
+    cursor: pointer;
+    margin: 0;
+    width: 60px;
+    height: fit-content;
+    text-align: center;
+    user-select: none;
 }
 
 .list-item-delete-btn {

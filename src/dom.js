@@ -23,6 +23,7 @@ dom_list.appendChild(list_header_wrapper);
 
 dom_list_item.className = "list-item";
 const list_item_wrapper = document.createElement("div");
+list_item_wrapper.className = "list-item-wrapper";
 const list_item_check = document.createElement("input");
 list_item_check.type = "checkbox";
 list_item_check.className = "list-item-checkbox";
@@ -37,9 +38,14 @@ list_item_delete_btn.innerText = "X";
 const list_item_descr = document.createElement("textarea");
 list_item_descr.className = "list-item-description";
 list_item_descr.placeholder = "Description"
+const list_item_priority = document.createElement("p");
+list_item_priority.className = "list-item-priority";
+//TEST
+list_item_priority.innerText = "low";
 
 list_item_wrapper.appendChild(list_item_check);
 list_item_wrapper.appendChild(list_item_name);
+list_item_wrapper.appendChild(list_item_priority);
 list_item_wrapper.appendChild(list_item_delete_btn);
 
 dom_list_item.appendChild(list_item_wrapper);
