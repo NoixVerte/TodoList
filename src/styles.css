@@ -44,7 +44,8 @@ body {
 .list {
     border: 1px solid black;
     border-radius: 5px;
-    height: 500px;
+    min-height: 500px;
+    height: fit-content;
     width: 300px;
     padding: 5px;
     display: flex;
@@ -65,17 +66,36 @@ body {
     font-size: 2rem;
 }
 
-.list-delete-btn {
+.list-delete-btn, .list-item-delete-btn {
     background-color: inherit;
     border: none;
     border-radius: 2px;
     font-size: 2rem;
 }
 
-.list-delete-btn:hover {
+.list-delete-btn:hover, .list-item-delete-btn:hover {
     background-color: rgba(255, 255, 255, 0.75);
     color: red;
     cursor: pointer;
+}
+
+.list-add-item-btn {
+    background-color: inherit;
+    width: 50px;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    border: 1px solid black;
+}
+
+.list-add-item-btn:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+    color: darkgreen;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.list-add-item-btn:active {
+    background-color: lightgreen;
 }
 
 .list-item {
@@ -91,6 +111,10 @@ body {
     background-color: inherit;
     border: none;
     font-size: 1.1rem;
+}
+
+.list-item-delete-btn {
+    font-size: 1rem;
 }
 
 .list-item-description {

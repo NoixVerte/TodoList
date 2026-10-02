@@ -12,6 +12,9 @@ list_header.placeholder = "List";
 const list_delete_btn = document.createElement("button");
 list_delete_btn.className = "list-delete-btn";
 list_delete_btn.innerText = "X";
+const list_add_item_btn = document.createElement("button");
+list_add_item_btn.className = "list-add-item-btn";
+list_add_item_btn.innerText = "+";
 
 
 list_header_wrapper.appendChild(list_header);
@@ -28,16 +31,19 @@ list_item_name.style = "text"
 list_item_name.maxLength = 21;
 list_item_name.placeholder = "Task"
 list_item_name.className = "list-item-name";
+const list_item_delete_btn = document.createElement("button");
+list_item_delete_btn.className = "list-item-delete-btn" ;
+list_item_delete_btn.innerText = "X";
 const list_item_descr = document.createElement("textarea");
 list_item_descr.className = "list-item-description";
 list_item_descr.placeholder = "Description"
 
 list_item_wrapper.appendChild(list_item_check);
 list_item_wrapper.appendChild(list_item_name);
+list_item_wrapper.appendChild(list_item_delete_btn);
 
 dom_list_item.appendChild(list_item_wrapper);
 dom_list_item.appendChild(list_item_descr);
 
-//Test
-dom_list.appendChild(dom_list_item);
-dom_list.appendChild(dom_list_item.cloneNode(true));
+dom_list.appendChild(list_add_item_btn);
+dom_list.insertBefore(dom_list_item, list_add_item_btn);

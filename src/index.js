@@ -8,10 +8,35 @@ const lists_wrapper = document.getElementById("lists-wrapper");
 
 function createList() {
     lists_wrapper.appendChild(dom_list.cloneNode(true));
+
+    const list_delete_btns = document.getElementsByClassName("list-delete-btn");
+    for (let list_delete_btn of list_delete_btns) {
+        list_delete_btn.addEventListener("click", (event) => {
+            event.target.closest(".list").remove();
+        });
+    };
+
+    const list_add_item_btns = document.getElementsByClassName("list-add-item-btn");
+    for (let list_add_item_btn of list_add_item_btns) {
+        if (list_add_item_btn.getAttribute("listener") !== "true") {
+            list_add_item_btn.addEventListener("click", (event) => {
+                createListItem(event.target.closest(".list"));
+            });
+            list_add_item_btn.setAttribute("listener", "true");
+        }
+    }
 };
 
-function createListItem() {
+function createListItem(parent) {
+    let newListItem = dom_list_item.cloneNode(true);
+    parent.insertBefore(newListItem, parent.querySelector(".list-add-item-btn"));
 
+    const list_item_delete_btns = document.getElementsByClassName("list-item-delete-btn");
+    for (let list_item_delete_btn of list_item_delete_btns) {
+        list_item_delete_btn.addEventListener("click", (event) => {
+            event.target.closest(".list-item").remove();
+        });
+    };
 }
 
 new_list_btn.addEventListener("click", () => {
@@ -19,10 +44,3 @@ new_list_btn.addEventListener("click", () => {
 });
 
 createList();
-
-// let myItem = new item("name", "descr", "duedate", "low");
-// console.log(myItem.priority);
-// myItem.changePriority("high");
-// console.log(myItem.priority);
-// myItem.changePriority("penis");
-// console.log(myItem.priority);
